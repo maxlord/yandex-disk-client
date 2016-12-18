@@ -6,11 +6,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.view.MotionEvent;
-import android.view.View;
-import android.view.ViewGroup;
-import android.view.inputmethod.InputMethodManager;
-import android.widget.EditText;
 
 import java.io.File;
 
@@ -67,42 +62,6 @@ public class ActivityHelper {
 			throws NullPointerException, ActivityNotFoundException {
 		startActivity(parentActivity, cls, closeCurrent, null);
 	}
-	
-	public static void hideSoftKeyboardOnOutside(Activity activity) {
-		InputMethodManager inputMethodManager = (InputMethodManager) activity
-				.getSystemService(Activity.INPUT_METHOD_SERVICE);
-		View focusView = activity.getCurrentFocus();
-		if (focusView != null) {
-			inputMethodManager.hideSoftInputFromWindow(focusView.getWindowToken(), 0);	
-		}
-	}
-
-	public static void setupAutoHideKeyboardOnOutside(final Activity activity, View view) {
-
-		// Set up touch listener for non-text box views to hide keyboard.
-		if (!(view instanceof EditText)) {
-
-			view.setOnTouchListener(new View.OnTouchListener() {
-
-				@Override
-				public boolean onTouch(View v, MotionEvent event) {
-					hideSoftKeyboardOnOutside(activity);
-					return false;
-				}
-			});
-		}
-
-		// If a layout container, iterate over children and seed recursion.
-		if (view instanceof ViewGroup) {
-
-			for (int i = 0; i < ((ViewGroup) view).getChildCount(); i++) {
-
-				View innerView = ((ViewGroup) view).getChildAt(i);
-
-				setupAutoHideKeyboardOnOutside(activity, innerView);
-			}
-		}
-	}
 
 	/**
 	 * Вызывает диалог выбора приложения для открытия документа
@@ -125,22 +84,4 @@ public class ActivityHelper {
 		// custom message for the intent
 		context.startActivity(Intent.createChooser(intent, "Выберите приложение:"));
 	}
-
-//	/**
-//	 * Выбирает элемент в списке
-//	 *
-//	 * @param spinner выпадающий список
-//	 * @param id идентификатор элемента
-//	 */
-//	public static void selectSpinnerItem(Spinner spinner, int id) {
-//		if (spinner != null && spinner.getAdapter() != null) {
-//			for (int i = 0; i < spinner.getAdapter().getCount(); i++) {
-//				KeyValue<Integer> item = (KeyValue<Integer>) spinner.getAdapter().getItem(i);
-//				if (item.key == id) {
-//					spinner.setSelection(i);
-//					break;
-//				}
-//			}
-//		}
-//	}
 }

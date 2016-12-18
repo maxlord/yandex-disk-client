@@ -21,5 +21,4 @@ public interface AppComponent {
 	Api provideApi();
 
 	ActivitySubComponent plus(ActivityModule module);
-//	ServiceSubComponent plus(ServiceModule module);
 }

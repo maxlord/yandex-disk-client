@@ -38,20 +38,10 @@ public class ActivityModule {
 		return null;
 	}
 
-//	@Provides
-//	@PerActivity
-//	public DatabaseHelper provideDatabaseHelper() {
-//		return OpenHelperManager.getHelper(activity, DatabaseHelper.class);
-//	}
-
 	@Provides
 	@ConfigPrefs
 	@PerActivity
 	public SharedPreferences provideConfigPrefs() {
 		return PreferenceManager.getDefaultSharedPreferences(activity);
 	}
-
-//	public void releaseDatabaseHelper() {
-//		OpenHelperManager.releaseHelper();
-//	}
 }

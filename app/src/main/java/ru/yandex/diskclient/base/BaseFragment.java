@@ -25,10 +25,6 @@ import ru.yandex.diskclient.annotation.ConfigPrefs;
  * @since 01.04.2015
  */
 public abstract class BaseFragment extends RxFragment {
-//	@Nullable
-//	@BindView(R.id.toolbar)
-//	protected Toolbar toolbar;
-
 	@Inject
 	@ConfigPrefs
 	protected SharedPreferences prefs;
@@ -59,10 +55,6 @@ public abstract class BaseFragment extends RxFragment {
 
 			inject();
 		}
-
-//		if (toolbar != null) {
-//			toolbar.setTitle(getActivity().getTitle());
-//		}
 
 		loadData();
 	}

@@ -89,15 +89,6 @@ public class AppModule {
 			interceptor.setLevel(HttpLoggingInterceptor.Level.BASIC);
 		}
 		client.interceptors().add(interceptor);
-//		client.networkInterceptors().add(chain -> {
-//			Request r = chain.request();
-//			Request request = r.newBuilder()
-//					.addHeader("Accept", "application/json")
-//					.addHeader("Content-Type", "application/json")
-//					.build();
-//
-//			return chain.proceed(request);
-//		});
 
 		b.client(client.build());
 		b.addConverterFactory(GsonConverterFactory.create(gson));
@@ -106,17 +97,5 @@ public class AppModule {
 		Retrofit retrofit = b.baseUrl(BuildConfig.API_URL).build();
 
 		return retrofit.create(Api.class);
-
-//		NetworkBehavior behavior = NetworkBehavior.create();
-//		ExecutorService bg = Executors.newSingleThreadExecutor();
-//
-//		return new MockRetrofit.Builder(retrofit)
-//			.networkBehavior(behavior)
-//			.backgroundExecutor(bg)
-//			.build()
-//			.create(Api.class);
-//		, new MockApi(application, retrofit)
-
-//		return retrofit.create(Api.class);
 	}
 }
