@@ -1,0 +1,18 @@
+<resources>
+	<string name="app_name">Яндекс.Диск!</string>
+	<string name="activity_main_title">Диск</string>
+	<string name="activity_login_title">Авторизация</string>
+	<string name="activity_directory_list_title">Яндекс.Диск</string>
+	<string name="activity_directory_list_menu_action_profile">Профиль</string>
+	<string name="activity_profile_title">Профиль</string>
+	<string name="activity_profile_space">
+		<![CDATA[
+			Использовано <b>%1$s</b> из <b>%2$s</b>
+		]]>
+	</string>
+	<string name="activity_profile_api_version">Версия АПИ: %1$d</string>
+	<string name="activity_profile_last_uploaded_files_title">Последние 10 загрузок:</string>
+	<string name="common_error">Ошибка</string>
+	<string name="common_api_error_text">Во время обращения к серверу возникла ошибка</string>
+	<string name="activty_directory_list_empty_text">Папка пуста.</string>
+</resources>

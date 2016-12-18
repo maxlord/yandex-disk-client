@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+	<include layout="@layout/widget_toolbar"/>
+
+
+	<FrameLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent">
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:orientation="vertical">
+
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:paddingBottom="@dimen/activity_vertical_margin"
+				android:paddingEnd="@dimen/activity_horizontal_margin"
+				android:paddingLeft="@dimen/activity_horizontal_margin"
+				android:paddingRight="@dimen/activity_horizontal_margin"
+				android:paddingStart="@dimen/activity_horizontal_margin"
+				android:paddingTop="@dimen/activity_vertical_margin">
+
+				<TextView
+					android:id="@+id/version"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"/>
+
+				<TextView
+					android:id="@+id/space"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"/>
+
+				<TextView
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:text="@string/activity_profile_last_uploaded_files_title"
+					android:textStyle="bold" />
+
+			</LinearLayout>
+
+			<android.support.v7.widget.RecyclerView
+				android:id="@+id/list"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"/>
+
+		</LinearLayout>
+
+		<ProgressBar
+			android:id="@+id/progress"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center"
+			android:indeterminate="true"/>
+
+	</FrameLayout>
+</LinearLayout>
